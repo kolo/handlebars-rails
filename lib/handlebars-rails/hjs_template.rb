@@ -21,7 +21,6 @@ module HandlebarsRails
       template.gsub!(/"/, '\\"')
       template.gsub!(/\r?\n/, '\\n')
       template.gsub!(/\t/, '\\t')
-      debugger
       "TEMPLATES[\"#{scope.logical_path.downcase.gsub(/[^a-z0-9]/, '_')}\"] = Handlebars.compile(\"#{template}\");\n"
     end
   end
