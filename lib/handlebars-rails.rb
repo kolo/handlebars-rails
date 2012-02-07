@@ -1,3 +1,4 @@
+require 'sprockets'
 require 'sprockets/engines'
 require 'handlebars-rails/hjs_template'
 
