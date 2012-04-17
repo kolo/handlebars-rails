@@ -7,9 +7,6 @@ module HandlebarsRails
       'application/javascript'
     end
 
-    def initialize_engine
-    end
-
     def prepare
     end
 
