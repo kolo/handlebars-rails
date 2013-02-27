@@ -11,14 +11,12 @@ module HandlebarsRails
     end
 
     # Generates Javascript code from a HandlebarsJS template.
-    # The template name is derived from the lowercase logical asset path
-    # by replacing non-alphanum characheters by underscores.
     def evaluate(scope, locals, &block)
       template = data.dup
       template.gsub!(/"/, '\\"')
       template.gsub!(/\r?\n/, '\\n')
       template.gsub!(/\t/, '\\t')
-      "TEMPLATES[\"#{scope.logical_path.downcase.gsub(/[^a-z0-9]/, '_')}\"] = Handlebars.compile(\"#{template}\");\n"
+      "Handlebars.compile(\"#{template}\");\n"
     end
   end
 end
